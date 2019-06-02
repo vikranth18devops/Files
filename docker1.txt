@@ -1,0 +1,41 @@
+FROM 8.5.41-jdk8
+MAINTAINER "OWNER"="VEKI"
+RUN sudo apt-get install maven -y
+COPY source dest 
+VOLUME ['/home/jenkins']
+EXPOSE 8080
+ENTRYPOINT ['catelina.sh', sh]
+
+
+
+COPY source /usr/lib/tomcat/webapss/mywar.war
+
+		or
+ADD source(url) dest
+
+
+commands:
+1. docker build -t mytomcat path (path: dockerfile path)
+2. docker run -it mytomcat tomcat8 /bin/bash
+
+if you want to go inside container:
+3. docker exec -it container-name
+
+
+
+
+
+
+docker build
+docker run
+docker exec
+docker tag
+
+Dcoker File:
+
+FROM
+MAINTAINER
+RUN
+VOLUME
+EXPOSE
+CMD and ENTRYPOINT
