@@ -1,0 +1,143 @@
+ 
+				***MAVEN***
+
+	 	- sudo -i  #### root user ki route avtadi######
+
+		- nano /etc/ssh/sshd_config
+		- service sshd restart
+		- adduser jenkin
+		- visudo       ///jenkin ALL=(ALL:ALL) NOPASSWD:ALL
+		- su jenkin
+			CD ~ >>>>>>>> user home directory change
+		- sudo apt-get update
+
+1. installing jdk8/oracle jdk (digital ocean.com)
+
+	sudo apt-get update	
+	sudo apt-get install openjdk-8-jdk -y
+	sudo apt-get install default-jre -y
+  Environment path settings:
+	sudo update-alternatives --config java 
+	sudo nano /etc/environment
+		JAVA_HOME="path of the jdk"   ===>JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64/"
+	source /etc/environment
+	echo $JAVA_HOME
+	
+2. installing maven on ubuntu16 (Google)
+	sudo apt-get install maven -y
+	mvn --version
+	echo $M2_HOME
+	sudo nano /etc/environment
+		M2_HOME="path of the maven"   ===>M2_HOME="/usr/share/maven"
+	echo $M2_HOME
+	source /etc/environment
+
+####################
+	
+3. install git
+	sudo apt-get install git -y	
+	git --version
+	git clone "url of project"
+	cd folder name of the project----
+	
+4. maven commands
+	mvn compile
+	mvn test
+	mvn package
+
+
+
+
+5. Jenkins:
+	installastion jekins
+wget -q -O - https://pkg.jenkins.io/debian/jenkins-ci.org.key | sudo apt-key add -
+sudo sh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'
+		sudo apt-get update
+		sudo apt-get install jenkins -y
+
+		sudo service jenkins status   ////// sudo nano var/lib/jenkins/secrets/initialAdminPassword
+		sudo -i
+		getent passwd
+
+
+				
+		now go to ec2 machine copy public-ip and enter into url section ==> http://(public-ip:8080) its opens jenkins site,
+		copy the path from our jenkins site,
+		sudo -i
+		cat "past the above path here" //(enter in terminal, it will gives the passwd of our jenkins).
+		in above we will get passwd, enter that passwd in the jenkins site)
+		the n now, install suggested plugns,
+		-create admin user/jenkins user,
+		-start using
+		--new item
+			-free style project, 
+
+############################		
+		
+6. Addding node(Jenkins master Remotely accessing Node):
+
+	1. create an ec2 instance based on your requirement.
+	2. install java
+	3. add user 
+	4. passwd based authentiction (sshd) (like ansible)
+	5. direct to the root to user (added user)
+	6. install maven
+	
+
+NODE******************
+
+open jenkins master server in cmd and login with jenkins user.
+	-	ssh-keygen (to generate the keygen key) enter
+	- 	no PRIVATE IP(1111111) then enter 
+	-       ssh NODE PRIVATE IP (122333) excute from Master jenkins
+	7. go to Jenkins dash board
+		-manage jenkins
+		-manage nodes
+			-new node
+			-enter the details what ever the required
+				(must importent Label, credentials, host key verifrication).
+ 
+
+CLICK ON ADD
+ 
+				-save.
+	8. now go to jenkins dash board.
+		-new item
+		-free style project
+		-choose the options
+			- General and SCM, Build triggers, ..etc.
+
+
+Maven Life Cycle:
+-	Validate, Clean, compile, test, package, install, deploy. 
+ 
+
+
+DOCKER
+
+Basic 
+: docker version 
+: docker -v 
+: docker info 
+: docker --help 
+: docker login 
+
+———————————— 
+Images 
+: docker images 
+: docker pull 
+: docker rmi 
+———————————— 
+Containers 
+: docker ps 
+: docker run 
+: docker start 
+: docker stop 
+ System 
+: docker stats 
+: docker system df 
+: docker system prune
+
+
+
+
