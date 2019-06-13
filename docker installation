@@ -86,6 +86,59 @@ docker rm -f 63d87b494
 
 
 
+=======================================================================
+FROM tomcat:8.5.41-jdk8    
+MAINTAINER "OWNER"="VEKI"
+RUN sudo apt-get install maven -y
+COPY source dest 
+VOLUME ['/home/jenkins']
+EXPOSE 8080
+ENTRYPOINT ['catelina.sh', sh]
+
+
+FROM tomcat:tag
+
+MAINTAINER "owner"="dell"
+MAINTAINER "auther"="viki"
+
+LABEL = meta data like owner info, flie info, app info, version
+
+
+RUN "sudo apt-get install git -y"  : for install with extra s/with
+
+COPY "source" "dest" : copy from the local
+
+ADD "source" "dest" : from external link (url)
+
+EXPOSE 8080    : expose the port to external world
+
+ENTRYPOINT / CMD:
+
+	ENTRYPOINT ['catalina.sh', sh]
+	CMD ['catalina.sh', sh]
+	
+VOLUME /home/ubuntu/logs     : we use for backup perpose
+===================
+FROM 9.0.20-jdk11
+MAINTAINER "OWNER"="VICKEY"
+RUN sudo apt-get install git -y
+EXPOSE 8080
+CMD ["catalina.sh", "run"]
+
+
+FROM nginx:1.17.0
+MAINTAINER "OWNER"="VICKEY"
+EXPOSE 8080
+CMD ["nginx", "-g", "daemon off;"]
+
+
+
+
+
+
+
+
+
 
 
 
