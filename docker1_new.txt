@@ -1,0 +1,213 @@
+FROM 8.5.41-jdk8
+MAINTAINER "OWNER"="VEKI"
+RUN sudo apt-get install maven -y
+COPY source dest 
+VOLUME ['/home/jenkins']
+EXPOSE 8080
+ENTRYPOINT ['catelina.sh', sh]
+
+
+
+COPY source /usr/lib/tomcat/webapss/mywar.war
+
+		or
+ADD source(url) dest
+
+
+commands:
+1. docker build -t mytomcat path (path: dockerfile path)
+2. docker run -it mytomcat tomcat8 /bin/bash
+
+if you want to go inside container:
+3. docker exec -it container-name
+
+
+
+
+
+
+docker build
+docker run
+docker exec
+docker tag
+
+Dcoker File:
+
+FROM
+MAINTAINER
+RUN
+VOLUME
+EXPOSE
+CMD and ENTRYPOINT
+
+
+
+INSTALLATION
+
+
+sudo curl -fsSL https://get.docker.com -o get-docker.sh
+sudo sh get-docker.sh
+ >>>> add user to docker group
+
+sudo usermod -ag docker jenkins
+
+
+already existed images:
+
+1. sudo docker pull tomcat
+2. docker images
+
+ TAG>>>>>  docker run -it tomcat:tag /bin/bash <<<<<
+3. sudo docker run -it tomcat:latest /bin/bash
+	sudo docker run -d tomcat:8.0-jdk8 
+
+4. docker ps -a <<<<docker running container stauts>>>>
+
+SYN <<docker rmi -f IMAGENAME >>>
+5. docker rmi -f tomcat:latest
+
+Containers ni chudali anukunte 
+sudo docker ps -a
+
+
+
+
+
+<<port mapping  >>
+ sudo docker run -d -p 8081:8080 --name tomcat2 tomcat:8.5-jdk8
+	
+	sudo docker run -d -p 8081:8080 --name Hyd tomcat:8.5-jdk8
+	sudo docker run -d -p 8082:8080 --name Mumbai tomcat:8.5-jdk8
+	sudo docker run -d -p 8083:8080 --name Pune tomcat:8.5-jdk8
+
+http://file-box.ga/getfile?id=rThxdsjvUig%3D&s=6FFFDCA2
+
+<<<<container start cheyadaniki>>>>
+
+sudo docker start <container ID or NAME>
+
+
+
+
+============================
+
+FROM 8.5.41-jdk8
+MAINTAINER "OWNER"="VEKI"
+RUN sudo apt-get install maven -y
+COPY source dest 
+VOLUME ['/home/jenkins']
+EXPOSE 8080
+ENTRYPOINT ['catelina.sh', sh]
+
+
+
+COPY source /usr/lib/tomcat/webapss/mywar.war
+
+		or
+ADD source(url) dest
+
+
+commands:
+1. docker build -t mytomcat path (path: dockerfile path)
+2. docker run -it mytomcat tomcat8 /bin/bash
+
+if you want to go inside container:
+3. docker exec -it container-name
+
+
+
+
+
+
+docker build
+docker run
+docker exec
+docker tag
+
+Dcoker File:
+
+FROM
+MAINTAINER
+RUN
+VOLUME
+EXPOSE
+CMD and ENTRYPOINT
+
+
+
+INSTALLATION
+
+
+sudo curl -fsSL https://get.docker.com -o get-docker.sh
+sudo sh get-docker.sh
+ >>>> add user to docker group
+
+sudo usermod -ag docker jenkins
+
+
+already existed images:
+
+1. sudo docker pull tomcat
+2. docker images
+
+ TAG>>>>>  docker run -it tomcat:tag /bin/bash <<<<<
+3. sudo docker run -it tomcat:latest /bin/bash
+	sudo docker run -d tomcat:8.0-jdk8 
+
+4. docker ps -a <<<<docker running container stauts>>>>
+
+SYN <<docker rmi -f IMAGENAME >>>
+5. docker rmi -f tomcat:latest
+
+Containers ni chudali anukunte 
+sudo docker ps -a
+
+
+day-3
+
+======
+
+1.nano dockerfile --- save it
+
+2.	FROM tomcat:8.5.41-jdk8    
+	MAINTAINER "OWNER"="VEKI"
+	RUN sudo apt-get install maven -yl9
+
+	EXPOSE 8080
+	ENTRYPOINT ['catelina.sh', sh]
+
+3.docker build -t viki3 .
+  	docker run -it --name <CONTAINER NAME(viki2)> <IMAGE NAME (viki3)>
+4.docker run -it --name viki2 <viki3>
+		or
+docker run -it -p 8083:8080 --name viki2 viki3			
+		or
+docker run -d -p 8083:8080 --name viki2 viki3
+
+
+nre voice naku ok
+
+COPY=Local Machine
+ADD=Remote location
+
+
+<<port mapping  >>
+ sudo docker run -d -p 8081:8080 --name tomcat2 tomcat:8.5-jdk8
+	docker run -d -p 8081:8080 --name viki5(IMAGE NAME) viki6(CONTAINER NAME)tomcat:8.5-jdk8
+
+	
+	sudo docker run -d -p 8081:8080 --name Hyd tomcat:8.5-jdk8
+	sudo docker run -d -p 8082:8080 --name Mumbai tomcat:8.5-jdk8
+	sudo docker run -d -p 8083:8080 --name Pune tomcat:8.5-jdk8
+
+http://file-box.ga/getfile?id=rThxdsjvUig%3D&s=6FFFDCA2
+
+<<<<container start cheyadaniki>>>>
+
+sudo docker start <container ID or NAME>
+
+
+DEVOPS TRANING-3 
+
+
+mama............................................
