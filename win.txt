@@ -1,0 +1,5 @@
+You can connect remotely using this information:
+Public DNS	ec2-18-224-62-154.us-east-2.compute.amazonaws.com
+User name	Administrator
+Password	
+rzmA$PQ(8ENxDURfbVil8%tzFW@8DF8O
