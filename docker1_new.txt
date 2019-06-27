@@ -209,5 +209,20 @@ sudo docker start <container ID or NAME>
 
 DEVOPS TRANING-3 
 
+dockerfile:
 
-mama............................................
+FROM tomcat:7.0.94-jdk8-openjdk
+MAINTAINER "OWNER"="VIKI"
+ADD https://sathees3bucket.s3.us-east-2.amazonaws.com/spring-petclinic-2.1.0.BUILD-SNAPSHOT.jar /usr/local/tomcat/webapps/spring-petclinic-2.1.0.BUILD-SNAPSHOT.jar
+EXPOSE 8080
+CMD ["catalina.sh", "run"]
+
+docker build -t veki .
+docker run -d -p 8888:8080 --name sathi veki:latest
+
+Browser: public-ip:8888/gameoflife
+
+------enter-------------
+
+devops: class4
+--------Volumes-------
