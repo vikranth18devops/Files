@@ -53,6 +53,7 @@
 		sudo apt-get install jenkins -y
 
 		sudo service jenkins status   ////// sudo nano /var/lib/jenkins/secrets/initialAdminPassword
+		sudo nano /var/lib/jenkins/secrets/initialAdminPassword
 		sudo -i
 		getent passwd
 
